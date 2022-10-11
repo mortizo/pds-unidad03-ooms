@@ -5,13 +5,26 @@
 
 package p61;
 
+import p61.template.Fijo;
+
 /**
  *
- * @author morti
+ * @author Mauricio Ortiz Ochoa
  */
 public class PdsUnidad03Ooms {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        template();
     }
+    
+        public static void template(){
+        System.out.println("Template");
+        
+        var fijo = new Fijo();
+        fijo.setHorasTrabajadas(160);
+        System.out.println(fijo.calcularSueldo());
+        
+        
+    }
+    
 }
