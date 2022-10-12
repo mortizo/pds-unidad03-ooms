@@ -6,12 +6,10 @@ package p61.state;
 
 /**
  *
- * @author morti
+ * @author Mauricio Ortiz Ochoa
  */
-public interface EstadoMatricula {
+public interface MatriculaState {
     
-    public boolean pendiente();
-    public boolean pagadoParcial();
-    public boolean pagadoTotal();
+    public String validar();
     
 }
