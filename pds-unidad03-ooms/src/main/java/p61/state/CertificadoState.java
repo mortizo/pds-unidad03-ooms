@@ -6,10 +6,12 @@ package p61.state;
 
 /**
  *
- * @author Mauricio Ortiz Ochoa
+ * @author morti
  */
-public interface MatriculaState {
+public interface CertificadoState {
     
-    public String validar();
+    String visualizarDocumento();
+    String generarDocumento();
+    String descargarDocumento();
     
 }
