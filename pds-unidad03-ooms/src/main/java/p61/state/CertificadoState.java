@@ -9,9 +9,11 @@ package p61.state;
  * @author morti
  */
 public interface CertificadoState {
-    
+
     String visualizarDocumento();
+
     String generarDocumento();
+
     String descargarDocumento();
-    
+
 }
