@@ -10,6 +10,8 @@ import p61.observer.Factura;
 import p61.observer.ServicioCliente;
 import p61.state.CertificadoContext;
 import p61.state.Iniciado;
+import p61.strategy.ContextoMatricula;
+import p61.strategy.NivelCarrera;
 import p61.template.Fijo;
 
 /**
@@ -21,7 +23,8 @@ public class PdsUnidad03Ooms {
     public static void main(String[] args) {
         //template();
         //state();
-        observer();
+        strategy();
+        //observer();
     }
 
     public static void template() {
@@ -59,6 +62,11 @@ public class PdsUnidad03Ooms {
         System.out.println("servicioCliente2 = " + servicioCliente2.toString());
         System.out.println("contabilidad1 = " + contabilidad1);
 
+    }
+    
+    public static void strategy() {
+        var contextoMatricula = new ContextoMatricula();
+        System.out.println("contextoMatricula = " + contextoMatricula.ejecutarEstrategia(NivelCarrera.GRADO));
     }
 
 }
