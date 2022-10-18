@@ -5,6 +5,9 @@
 package p61;
 
 
+import p61.observer.Contabilidad;
+import p61.observer.Factura;
+import p61.observer.ServicioCliente;
 import p61.state.CertificadoContext;
 import p61.state.Iniciado;
 import p61.template.Fijo;
@@ -16,8 +19,9 @@ import p61.template.Fijo;
 public class PdsUnidad03Ooms {
 
     public static void main(String[] args) {
-        template();
-        state();
+        //template();
+        //state();
+        observer();
     }
 
     public static void template() {
@@ -34,6 +38,26 @@ public class PdsUnidad03Ooms {
 
         var certificadoContext= new CertificadoContext(new Iniciado());
         certificadoContext.crearCertificado();
+
+    }
+    
+    public static void observer() {
+        System.out.println("Observer");
+
+        var factura1= new Factura();
+        var servicioCliente1 = new ServicioCliente();
+        var servicioCliente2 = new ServicioCliente();
+        var contabilidad1 = new Contabilidad();
+        
+        factura1.attach(servicioCliente1);
+        factura1.attach(servicioCliente2);
+        factura1.attach(contabilidad1);
+        
+        factura1.setFacturaPagada(true);
+        factura1.notificar();
+        System.out.println("servicioCliente1 = " + servicioCliente1.toString());
+        System.out.println("servicioCliente2 = " + servicioCliente2.toString());
+        System.out.println("contabilidad1 = " + contabilidad1);
 
     }
 
