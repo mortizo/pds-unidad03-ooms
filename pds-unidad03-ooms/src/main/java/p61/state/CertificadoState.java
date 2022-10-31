@@ -10,6 +10,7 @@ package p61.state;
  */
 public interface CertificadoState {
 
+    
     String visualizarDocumento();
 
     String generarDocumento();

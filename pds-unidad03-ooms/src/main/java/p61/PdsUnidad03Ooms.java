@@ -13,6 +13,7 @@ import p61.state.Iniciado;
 import p61.strategy.ContextoMatricula;
 import p61.strategy.NivelCarrera;
 import p61.template.Fijo;
+import p61.template.Temporal;
 
 /**
  *
@@ -23,8 +24,8 @@ public class PdsUnidad03Ooms {
     public static void main(String[] args) {
         //template();
         //state();
-        strategy();
-        //observer();
+        //strategy();
+        observer();
     }
 
     public static void template() {
@@ -33,6 +34,10 @@ public class PdsUnidad03Ooms {
         var fijo = new Fijo();
         fijo.setHorasTrabajadas(160);
         System.out.println(fijo.calcularSueldo());
+        
+        var temp = new Temporal();
+        temp.setHorasTrabajadas(160);
+        System.out.println(temp.calcularSueldo());
 
     }
 

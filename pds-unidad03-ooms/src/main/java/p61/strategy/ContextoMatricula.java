@@ -17,6 +17,11 @@ public class ContextoMatricula {
                 var matriculaGrado = new MatriculaGrado();
                 retorno=matriculaGrado.calcularDescuentoProntoPago();
                 break;
+            case POSGRADO:
+                var matriculaPosgrado = new MatriculaPosgrado();
+                retorno=matriculaPosgrado.calcularDescuentoProntoPago();
+                break;
+                
             default:
                 throw new AssertionError();
         }
