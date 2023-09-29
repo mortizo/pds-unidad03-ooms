@@ -9,21 +9,34 @@ package p61.state;
  * @author morti
  */
 public class EnTramite implements CertificadoState{
+    
+    private CertificadoContext certificado;
+
+    public EnTramite(CertificadoContext certificado) {
+        this.certificado = certificado;
+    }
+    
+    
 
     @Override
     public String visualizarDocumento() {
-        return this.generarDocumento()+"\n"+"Certificado se puede visualizar con marca de agua...";
+        return " 2. Certificado se puede visualizar con marca de agua...";
     }
 
     @Override
     public String generarDocumento() {
-        return "Certificado generado dinámicamente a la fecha actual..."; 
+        return " 2. Certificado generado dinámicamente a la fecha actual..."; 
     }
 
     @Override
     public String descargarDocumento() {
         
-        return this.generarDocumento()+"\n"+" El certificado se puede descargar con marca de agua";    
+        return " 2. El certificado se puede descargar con marca de agua";    
+    }
+
+    @Override
+    public void cambiarEstado() {
+        this.certificado.setEstadoCertificado(new Firmado(this.certificado));
     }
     
 }

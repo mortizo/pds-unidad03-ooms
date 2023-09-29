@@ -9,21 +9,34 @@ package p61.state;
  * @author morti
  */
 public class Firmado implements CertificadoState{
+    
+    private CertificadoContext certificado;
+
+    public Firmado(CertificadoContext certificado) {
+        this.certificado = certificado;
+    }
+    
+    
 
     @Override
     public String visualizarDocumento() {
-        return this.generarDocumento()+"\n"+"Certificado se puede visualizar";
+        return " 3. Certificado se puede visualizar";
     }
 
     @Override
     public String generarDocumento() {
-        return "Certificado generado y firmado no se puede modificar";    
+        return "3. Certificado generado y firmado no se puede modificar";    
     }
 
     @Override
     public String descargarDocumento() {
         
-        return this.generarDocumento()+"\n"+" El certificado se puede descargar";    
+        return "3. El certificado se puede descargar";    
+    }
+
+   @Override
+    public void cambiarEstado() {
+        this.certificado.setEstadoCertificado(this);
     }
     
 }

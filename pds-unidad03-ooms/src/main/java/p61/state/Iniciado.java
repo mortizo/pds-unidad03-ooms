@@ -9,20 +9,31 @@ package p61.state;
  * @author morti
  */
 public class Iniciado implements CertificadoState{
+    
+    private CertificadoContext certificado;
+
+    public Iniciado(CertificadoContext certificado) {
+        this.certificado = certificado;
+    }
 
     @Override
     public String visualizarDocumento() {
-        return "El certificado no se puede visualizar...";
+        return "1. El certificado no se puede visualizar...";
     }
 
     @Override
     public String generarDocumento() {
-        return "Certificado generado dinámicamente a la fecha actual...";    
+        return "1. Certificado generado dinámicamente a la fecha actual...";    
     }
 
     @Override
     public String descargarDocumento() {
-        return "El certificado no se puede descargar...";    
+        return "1. El certificado no se puede descargar...";    
+    }
+
+    @Override
+    public void cambiarEstado() {
+        this.certificado.setEstadoCertificado(new EnTramite(this.certificado));
     }
     
 }

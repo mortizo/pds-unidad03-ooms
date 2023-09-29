@@ -9,7 +9,8 @@ package p61.state;
  * @author morti
  */
 public interface CertificadoState {
-
+   
+    void cambiarEstado();
     
     String visualizarDocumento();
 

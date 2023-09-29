@@ -43,9 +43,9 @@ public class PdsUnidad03Ooms {
 
     public static void state() {
         System.out.println("State");
-
-        var certificadoContext= new CertificadoContext(new Iniciado());
-        certificadoContext.crearCertificado();
+//
+   //     var certificadoContext= new CertificadoContext();
+   //     certificadoContext.crearCertificado();
 
     }
     
