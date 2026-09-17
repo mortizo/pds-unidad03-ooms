@@ -16,10 +16,10 @@ public class Principal {
     }
 
     private static void mostrar(String caso, MatriculaContext contexto, int cuotas, int ciclo) {
-        DatosMatricula datos = new DatosMatricula(new BigDecimal("100.00"), cuotas, ciclo);
-        BigDecimal descuento = contexto.ejecutarEstrategia(datos);
-        System.out.println(caso + " | Cuota: " + datos.getValorCuota()
+        BigDecimal valorCuota = new BigDecimal("100.00");
+        BigDecimal descuento = contexto.ejecutarEstrategia(valorCuota, cuotas, ciclo);
+        System.out.println(caso + " | Cuota: " + valorCuota
                 + " | Descuento por cuota: " + descuento
-                + " | Neto por cuota: " + datos.getValorCuota().subtract(descuento));
+                + " | Neto por cuota: " + valorCuota.subtract(descuento));
     }
 }

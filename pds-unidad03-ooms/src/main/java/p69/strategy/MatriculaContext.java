@@ -15,8 +15,8 @@ public class MatriculaContext {
         this.estrategia = Objects.requireNonNull(estrategia, "La estrategia es obligatoria");
     }
 
-    public BigDecimal ejecutarEstrategia(DatosMatricula datos) {
-        return estrategia.calcularDescuentoProntoPago(
-                Objects.requireNonNull(datos, "Los datos son obligatorios"));
+    public BigDecimal ejecutarEstrategia(BigDecimal valorCuota, int cuotasPagadas, int ciclo) {
+        MatriculaStrategy.validarDatos(valorCuota, cuotasPagadas, ciclo);
+        return estrategia.calcularDescuentoProntoPago(valorCuota, cuotasPagadas, ciclo);
     }
 }
